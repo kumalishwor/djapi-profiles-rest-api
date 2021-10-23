@@ -28,5 +28,8 @@ Vagrant.configure("2") do |config|
       echo "# PYTHON_ALIAS_ADDED" >> /home/vagrant/.bash_aliases
       echo "alias python='python3'" >> /home/vagrant/.bash_aliases
     fi
+    sudo apt-get install -y python3-pip
+    sudo pip3 install -r /vagrant/requirements.txt
+    sudo python /vagrant/manage.py runserver 0.0.0.0:000
   SHELL
 end
